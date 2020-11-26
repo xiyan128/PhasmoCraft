@@ -4,7 +4,7 @@ modLoader = "javafml"
 # Forge for 1.15.2 is version 31
 loaderVersion = "[31,)"
 # A URL to refer people to when problems occur with this mod
-issueTrackerURL = "https://github.com/MinecraftForge/MinecraftForge/issues"
+issueTrackerURL = "https://github.com/xiyan128/PhasmoCraft/issues"
 # If the mods defined in this file should show as seperate resource packs
 showAsResourcePack = false
 license = "MIT"
@@ -13,8 +13,8 @@ license = "MIT"
 modId = "phasmo"
 version = "1.1.0.0"
 displayName = "PhasmoCraft"
-updateJSONURL = "https://minecraftforge.net/versions.json"
-displayURL = "https://minecraftforge.net"
+updateJSONURL = "https://github.com/xiyan128/PhasmoCraft"
+displayURL = "https://github.com/xiyan128/PhasmoCraft"
 #logoFile = "assets/examplemod/textures/logo.png"
 credits = "No thanks."
 authors = "Xiyan Shao"
