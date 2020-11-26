@@ -1,0 +1,10 @@
+{
+  "mea": {
+    "category" : "entity",
+    "sounds": [{
+      "name": "phasmo:mea",
+      "stream": false
+    }
+    ]
+  }
+}
