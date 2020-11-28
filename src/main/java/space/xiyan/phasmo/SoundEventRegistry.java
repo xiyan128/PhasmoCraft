@@ -8,7 +8,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 
 public class SoundEventRegistry {
   public static final DeferredRegister SOUNDS =
-      DeferredRegister.create(ForgeRegistries.SOUND_EVENTS, "phasmo");
+          DeferredRegister.create(ForgeRegistries.SOUND_EVENTS, Phasmo.MOD_ID);
   public static RegistryObject<SoundEvent> meaSound =
-      SOUNDS.register("mea", () -> new SoundEvent(new ResourceLocation("phasmo", "mea")));
+          SOUNDS.register("mea", () -> new SoundEvent(new ResourceLocation(Phasmo.MOD_ID, "mea")));
 }
