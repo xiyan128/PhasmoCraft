@@ -25,6 +25,7 @@ public class PhasmoConfig {
         public final ForgeConfigSpec.IntValue timeGapMax;
         public final ForgeConfigSpec.IntValue timeGapMin;
         public final ForgeConfigSpec.DoubleValue maxPitch;
+        public final ForgeConfigSpec.DoubleValue radiusYScale;
 
         public Common(ForgeConfigSpec.Builder builder) {
             builder.comment("PhasmoCraft Mod Configuration")
@@ -33,6 +34,7 @@ public class PhasmoConfig {
             timeGapMax = builder.defineInRange("max_beep_gap", 20, 0, Integer.MAX_VALUE);
             timeGapMin = builder.defineInRange("min_beep_gap", 3, 0, Integer.MAX_VALUE);
             maxPitch = builder.defineInRange("max_pitch", 2.0, 1, Float.MAX_VALUE);
+            radiusYScale = builder.defineInRange("radius_y_scale", 0.3, 0.1, Double.MAX_VALUE);
             builder.pop();
         }
     }

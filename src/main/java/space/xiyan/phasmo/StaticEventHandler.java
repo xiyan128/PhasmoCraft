@@ -6,6 +6,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.Hand;
 import net.minecraft.util.SoundEvent;
+import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.world.World;
@@ -59,7 +60,7 @@ public class StaticEventHandler {
                                       .expand(-radius, -radius, -radius))
                       .stream()
                       .filter(e -> ghostTrace.getTag().getInt(TAG_NAME) == e.getType().hashCode())
-                      .filter(e -> player.getDistance(e) <= radius)
+                      .filter(e -> insideEllipsoid(player.getPositionVec(), e.getPositionVec()))
                       .collect(Collectors.toList());
       if (entities.isEmpty()) return;
       Entity toTrace = entities.get(0);
@@ -84,6 +85,12 @@ public class StaticEventHandler {
                     / maxDistance
                     * distance
                     + PhasmoConfig.COMMON.timeGapMin.get());
+  }
+
+  private static boolean insideEllipsoid(Vector3d center, Vector3d pos) {
+    final double a = PhasmoConfig.COMMON.radius.get();
+    final double b = a * PhasmoConfig.COMMON.radiusYScale.get();
+    return Math.pow(pos.x - center.x, 2) / (a * a) + Math.pow(pos.y - center.y, 2) / (b * b) + Math.pow(pos.z - center.z, 2) / (a * a) <= 1;
   }
 
   @SubscribeEvent
